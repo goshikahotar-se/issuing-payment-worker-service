@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+        <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\IssuingPayment.WorkerService.Application\IssuingPayment.WorkerService.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AWSSDK.SQS" Version="4.0.2.24" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.5" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EditorConfigFiles Include="..\..\..\..\Program Files\dotnet\sdk\10.0.201\Sdks\Microsoft.NET.Sdk\analyzers\build\config\analysislevel_10_default.globalconfig">
+        <Link>config\analysislevel_10_default.globalconfig</Link>
+      </EditorConfigFiles>
+    </ItemGroup>
+
+</Project>
