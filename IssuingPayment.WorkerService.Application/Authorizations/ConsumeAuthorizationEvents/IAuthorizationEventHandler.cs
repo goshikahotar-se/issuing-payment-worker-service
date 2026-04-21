@@ -4,6 +4,6 @@ namespace IssuingPayment.WorkerService.Application.Authorizations.ConsumeAuthori
 
 public interface IAuthorizationEventHandler
 {
-    Task HandleAsync(AuthorizationApprovedEvent e, CancellationToken cancellationToken);
+    Task HandleAsync(AuthorizationApprovedEvent e, string messageId, CancellationToken cancellationToken);
     Task HandleAsync(AuthorizationDeclinedEvent e, CancellationToken cancellationToken);
 }

@@ -93,7 +93,7 @@ public class AuthorizationEventSqsListener : BackgroundService
                 if (approvedEvent is null) return;
 
                 _logger.LogInformation("Approved authorization received. MessageId={MessageId}", message.MessageId);
-                await _authorizationEventHandler.HandleAsync(approvedEvent, cancellationToken);
+                await _authorizationEventHandler.HandleAsync(approvedEvent, message.MessageId, cancellationToken);
             }
             else if (root.TryGetProperty("ReasonCode", out _))
             {

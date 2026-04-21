@@ -29,6 +29,7 @@ builder.Services.AddSingleton<IAmazonSQS>(_ =>
 
 builder.Services.AddSingleton<IAuthorizationEventHandler, AuthorizationEventHandler>();
 builder.Services.AddHostedService<AuthorizationEventSqsListener>();
+builder.Services.AddSingleton<IAuthorizationEventRepository, MySqlAuthorizationEventRepository>();
 
 var host = builder.Build();
 host.Run();

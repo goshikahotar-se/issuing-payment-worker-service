@@ -6,18 +6,20 @@ namespace IssuingPayment.WorkerService.Application.Authorizations.ConsumeAuthori
 public class AuthorizationEventHandler : IAuthorizationEventHandler
 {
     private readonly ILogger<AuthorizationEventHandler> _logger;
+    private readonly IAuthorizationEventRepository _authorizationEventRepository;
 
-    public AuthorizationEventHandler(ILogger<AuthorizationEventHandler> logger)
+    public AuthorizationEventHandler(ILogger<AuthorizationEventHandler> logger,  IAuthorizationEventRepository authorizationEventRepository)
     {
         _logger = logger;
+        _authorizationEventRepository = authorizationEventRepository;
     }
     
-    public Task HandleAsync(AuthorizationApprovedEvent e, CancellationToken cancellationToken)
+    public async Task HandleAsync(AuthorizationApprovedEvent e, string messageId, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Authorization approved event. Card: {CardId}, Amount: {Amount}, Currency: {Currency}, AuthorizationCode: {AuthorizationCode}, CreatedOn: {CreatedOn}",
             e.CardId, e.Amount, e.Currency, e.AuthorizationCode, e.CreatedOn);
         
-        return Task.CompletedTask;
+        await _authorizationEventRepository.SaveApprovedAsync(e, messageId, DateTime.UtcNow, cancellationToken);
     }
 
     public Task HandleAsync(AuthorizationDeclinedEvent e, CancellationToken cancellationToken)
