@@ -22,11 +22,11 @@ public class AuthorizationEventHandler : IAuthorizationEventHandler
         await _authorizationEventRepository.SaveApprovedAsync(e, messageId, DateTime.UtcNow, cancellationToken);
     }
 
-    public Task HandleAsync(AuthorizationDeclinedEvent e, CancellationToken cancellationToken)
+    public async Task HandleAsync(AuthorizationDeclinedEvent e, string messageId, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Declined approved event. Card: {CardId}, Amount: {Amount}, Currency: {Currency}, ReasonCode: {ReasonCode}, CreatedOn: {CreatedOn}",
             e.CardId, e.Amount, e.Currency, e.ReasonCode, e.CreatedOn);
         
-        return Task.CompletedTask;
+        await _authorizationEventRepository.SaveDeclinedAsync(e, messageId, DateTime.UtcNow, cancellationToken);
     }
 }

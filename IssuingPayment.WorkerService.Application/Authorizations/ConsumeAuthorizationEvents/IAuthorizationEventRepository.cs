@@ -5,5 +5,5 @@ namespace IssuingPayment.WorkerService.Application.Authorizations.ConsumeAuthori
 public interface IAuthorizationEventRepository
 {
     Task SaveApprovedAsync(AuthorizationApprovedEvent e, string messageId, DateTime processedOn, CancellationToken cancellationToken);
-    //Task SaveDeclinedAsync(AuthorizationDeclinedEvent e, string messageId, DateTime processedOn, CancellationToken cancellationToken);
+    Task SaveDeclinedAsync(AuthorizationDeclinedEvent e, string messageId, DateTime processedOn, CancellationToken cancellationToken);
 }

@@ -101,7 +101,7 @@ public class AuthorizationEventSqsListener : BackgroundService
                 if (declinedEvent is null) return;
 
                 _logger.LogInformation("Declined authorization received. MessageId={MessageId}", message.MessageId);
-                await _authorizationEventHandler.HandleAsync(declinedEvent, cancellationToken);
+                await _authorizationEventHandler.HandleAsync(declinedEvent, message.MessageId, cancellationToken);
             }
             else
             {

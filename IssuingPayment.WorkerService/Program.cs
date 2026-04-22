@@ -1,8 +1,6 @@
-using IssuingPayment.WorkerService;
 using Amazon.Runtime;
 using Amazon.SQS;
 using IssuingPayment.WorkerService.Application.Authorizations.ConsumeAuthorizationEvents;
-using IssuingPayment.WorkerService.Infrastructure;
 using IssuingPayment.WorkerService.Infrastructure.Authorizations;
 
 var builder = Host.CreateApplicationBuilder(args);
