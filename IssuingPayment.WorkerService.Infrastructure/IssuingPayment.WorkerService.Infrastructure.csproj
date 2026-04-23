@@ -20,10 +20,4 @@
       <PackageReference Include="MySqlConnector" Version="2.5.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <EditorConfigFiles Include="..\..\..\..\Program Files\dotnet\sdk\10.0.201\Sdks\Microsoft.NET.Sdk\analyzers\build\config\analysislevel_10_default.globalconfig">
-        <Link>config\analysislevel_10_default.globalconfig</Link>
-      </EditorConfigFiles>
-    </ItemGroup>
-
 </Project>
