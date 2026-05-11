@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IssuingPayment.WorkerServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IssuingPayment.WorkerService.Infrastructure", "IssuingPayment.WorkerService.Infrastructure\IssuingPayment.WorkerService.Infrastructure.csproj", "{074D29AC-639E-4648-965F-8DE017CA7DCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IssuingPayment.WorkerService.Tests", "IssuingPayment.WorkerService.Tests\IssuingPayment.WorkerService.Tests.csproj", "{A9AB662A-054B-48AF-921F-5F7709E881F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{074D29AC-639E-4648-965F-8DE017CA7DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{074D29AC-639E-4648-965F-8DE017CA7DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{074D29AC-639E-4648-965F-8DE017CA7DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9AB662A-054B-48AF-921F-5F7709E881F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9AB662A-054B-48AF-921F-5F7709E881F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9AB662A-054B-48AF-921F-5F7709E881F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9AB662A-054B-48AF-921F-5F7709E881F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

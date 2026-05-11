@@ -18,4 +18,8 @@
         <Using Include="Xunit"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\IssuingPayment.WorkerService.Application\IssuingPayment.WorkerService.Application.csproj" />
+    </ItemGroup>
+
 </Project>
